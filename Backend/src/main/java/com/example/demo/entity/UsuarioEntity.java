@@ -8,21 +8,16 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "productos")
 @Data
-public class ProductosEntity {
-
+@Table(name = "usuarios")
+public class UsuarioEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String nombre;
-    private Double precio;
-    private double stock;
-    private double cantidad;
-    
 
-
+    private String email;
     
 }
