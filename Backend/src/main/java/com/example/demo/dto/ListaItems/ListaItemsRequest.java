@@ -6,12 +6,8 @@ import lombok.Data;
 public class ListaItemsRequest {
 
 
-    private long idProducto;
+    private long productoId;
 
     private double cantidad;
-
-    private long idLista;
-
-
     
 }

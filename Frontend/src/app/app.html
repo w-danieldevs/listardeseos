@@ -13,10 +13,12 @@
 
     <p>${{ producto.precio }}</p>
 
-    <button (click)="cargarProductos()">
+    <button (click)="AgregarProductos(producto.id)">
       Agregar a deseos
     </button>
 
   </div>
 
 </div>
+
+<app-producto-list></app-producto-list>

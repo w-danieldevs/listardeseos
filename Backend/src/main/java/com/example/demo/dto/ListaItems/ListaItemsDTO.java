@@ -7,7 +7,9 @@ public class ListaItemsDTO {
 
     private long id;
 
-    private long idProducto;
+    private Long listaId;
+
+    private long nombre;
 
     private String nombreProducto;
 

@@ -18,11 +18,7 @@ public class ListaitemsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer cantidad;
-
-    @ManyToOne
-    @JoinColumn(name = "lista_id")
-    private ListaEntity lista;
+    private double cantidad;
 
     @ManyToOne
     @JoinColumn(name = "producto_id")

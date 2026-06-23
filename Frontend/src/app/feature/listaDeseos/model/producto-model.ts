@@ -9,6 +9,12 @@ export interface productos {
 
 }
 
+export interface listaItemsModel{
+
+  productoId : number;
+  cantidad : number;
+}
+
 
 @Injectable({
   providedIn: 'root',
