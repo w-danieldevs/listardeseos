@@ -15,6 +15,19 @@ export interface listaItemsModel{
   cantidad : number;
 }
 
+export interface ListaItemModel {
+  id: number;
+  cantidad: number;
+  producto: ProductoModel;
+}
+
+export interface ProductoModel {
+  id: number;
+  nombre: string;
+  precio: number;
+  stock: number;
+}
+
 
 @Injectable({
   providedIn: 'root',

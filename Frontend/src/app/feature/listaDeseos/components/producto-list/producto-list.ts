@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ListaItems } from '../../service/lista-items';
-import {  listaItemsModel, ProductoModel, productos } from '../../model/producto-model';
+import {  ListaItemModel, listaItemsModel, ProductoModel, productos } from '../../model/producto-model';
 
 @Component({
   selector: 'app-producto-list',
@@ -10,7 +10,8 @@ import {  listaItemsModel, ProductoModel, productos } from '../../model/producto
 })
 export class ProductoList {
 
-  items: productos[] =[];
+@Input()
+  items: ListaItemModel[] = [];
 
   constructor(
     private listaItemsService: ListaItems,

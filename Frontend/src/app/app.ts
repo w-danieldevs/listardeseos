@@ -12,6 +12,7 @@ import { listaItemsModel } from './feature/listaDeseos/model/producto-model';
 export class App implements OnInit {
 
    productos: any[] = [];
+   items: any[] = [];
 
   constructor(
     private productoService: ProductoService,
@@ -22,8 +23,19 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     this.cargarProductos();
+    this.cargarItems();
   }
 
+   cargarItems(): void {
+  this.listaItems.getItems().subscribe({
+    next: (data) => {
+       console.log("ITEMS:", data);
+      this.items = data;
+      this.cdr.detectChanges();
+    },
+    error: (err) => console.error(err)
+  });
+   }
   cargarProductos(): void {
     this.productoService.getProducto()
       .subscribe({
@@ -51,10 +63,11 @@ export class App implements OnInit {
       .agregarItem(request)
       .subscribe({
         next: (response) => {
-          alert(response.message);
+          alert(response.message)
+          this.cargarItems();
         },
         error: (error) => {
-          console.error(error);
+          console.error(error)
         }
       });
 }

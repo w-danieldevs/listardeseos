@@ -2,14 +2,18 @@ package com.example.demo.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 import com.example.demo.dto.MessageResponse;
 import com.example.demo.dto.ListaItems.ListaItemsRequest;
+import com.example.demo.entity.ListaitemsEntity;
 import com.example.demo.service.ListaItemsService;
+import com.example.demo.Repository.ListaItemsRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class ListaItemsController {
 
     private final  ListaItemsService listaItemsService;
+    private final ListaItemsRepository listaItemsRepository;
 
    
     
@@ -31,4 +36,9 @@ public class ListaItemsController {
                 listaItemsService.agregarItem(request)
         );
     }
+
+    @GetMapping
+      public List<ListaitemsEntity> listarItems() {
+    return listaItemsRepository.findAll();
+}
 }
